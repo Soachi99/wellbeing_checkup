@@ -28,38 +28,39 @@ class CustomButton extends StatelessWidget {
   /// Habilitar animación de carga
   final bool? isLoading;
 
-  const CustomButton({
-    super.key,
-    required this.label,
-    this.color,
-    this.height,
-    this.width,
-    required this.onPressed,
-    this.isLoading = false,
-    this.loadingColor,
-    this.textColor,
-  });
+  /// Habilitar animación de carga
+  final bool disabled;
+
+  const CustomButton(
+      {super.key,
+      required this.label,
+      this.color,
+      this.height,
+      this.width,
+      required this.onPressed,
+      this.isLoading = false,
+      this.loadingColor,
+      this.textColor,
+      this.disabled = false});
 
   @override
   Widget build(BuildContext context) {
     return Material(
-      borderRadius: dimens.borderRadiusContainer(10),
-      color: color ?? customColors.purple,
+      borderRadius: dimens.borderRadiusContainer(40),
+      color: disabled ? customColors.disable : customColors.purple,
       child: InkWell(
-        borderRadius: dimens.borderRadiusContainer(10),
-        onTap: (isLoading == false) ? () => onPressed() : null,
-        highlightColor: Colors.transparent,
-        focusColor: Colors.transparent,
-        radius: 0,
+        borderRadius: dimens.borderRadiusContainer(40),
+        onTap: (isLoading == false && !disabled) ? () => onPressed() : null,
         child: Container(
           alignment: Alignment.center,
-          height: height ?? 45,
+          height: height ?? 50,
           width: width,
           child: !isLoading!
               ? CustomText(
                   label,
-                  textColor: textColor ?? customColors.white,
-                  fontWeight: FontWeight.w700,
+                  textColor: disabled ? customColors.black : customColors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600,
                 )
               : Center(
                   child: SpinKitWave(

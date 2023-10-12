@@ -1,0 +1,32 @@
+{
+    "options":[
+        {
+            "id": "option1",
+            "name": "Wellbeing",
+            "minutes": 1,
+            "disabled": false,
+            "image": "assets/images/wellbeing.png" 
+        },
+        {
+            "id": "option2",
+            "name": "Self-Compassion",
+            "minutes": 3,
+            "disabled": false,
+            "image": "assets/images/self.png" 
+        },
+        {
+            "id": "option3",
+            "name": "Stress Temperature",
+            "minutes": 3,
+            "disabled": false,
+            "image": "assets/images/stress.png" 
+        },
+        {
+            "id": "option4",
+            "name": "Self Awareness",
+            "minutes": 2,
+            "disabled": true,
+            "image": "assets/images/awareness.png" 
+        }
+    ]
+}

@@ -7,6 +7,7 @@ class CustomColors {
   final Color disable = const Color(0xFFDDD4FF);
   final Color grey = const Color(0xFF424242);
   final Color black = const Color(0xFF313131);
+  final Color lightGrey = const Color(0xFFCCCCCC);
 }
 
 CustomColors customColors = CustomColors();
