@@ -1,8 +1,6 @@
-import 'dart:developer';
-
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
-import 'package:wellbeing_checkup/src/tools/custom_colors.dart';
+import 'package:go_router/go_router.dart';
 import 'package:wellbeing_checkup/src/tools/tools.dart';
 import 'package:wellbeing_checkup/src/widgets/custom_button.dart';
 import 'package:wellbeing_checkup/src/widgets/custom_question/custom_question.dart';
@@ -76,7 +74,10 @@ class _QuestionsState extends ConsumerState<QuestionsPage> {
               CustomButton(
                   disabled: !state.questionsCompleted,
                   label: "Continue",
-                  onPressed: () => controller.calculateResult())
+                  onPressed: () => {
+                        context.go(Routes.result,
+                            extra: controller.calculateResult())
+                      })
             ],
           ),
         ),

@@ -43,6 +43,6 @@ class CheckUpController extends StateNotifier<CheckUpState> {
 }
 
 final checkUpController =
-    StateNotifierProvider<CheckUpController, CheckUpState>((ref) {
+    StateNotifierProvider.autoDispose<CheckUpController, CheckUpState>((ref) {
   return CheckUpController(repository: ref.watch(checkUpRepositoryProvider));
 });

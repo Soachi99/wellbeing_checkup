@@ -1,5 +1,5 @@
 class PathsImages {
-  final String wellbeing = 'assets/images/wellbeing.png';
+  final String wellbeingResult = 'assets/images/wellbeing_result.png';
 }
 
 final PathsImages images = PathsImages();

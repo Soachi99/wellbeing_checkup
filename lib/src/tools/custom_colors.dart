@@ -8,6 +8,7 @@ class CustomColors {
   final Color grey = const Color(0xFF424242);
   final Color black = const Color(0xFF313131);
   final Color lightGrey = const Color(0xFFCCCCCC);
+  final Color lightBlue = const Color(0xFFe1f1fc);
 }
 
 CustomColors customColors = CustomColors();

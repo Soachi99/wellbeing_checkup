@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:wellbeing_checkup/src/features/check_up/data/check_up_repository.dart';
 import 'questions_state.dart';
@@ -34,17 +32,17 @@ class QuestionsController extends StateNotifier<QuestionsState> {
     }
   }
 
-  calculateResult() {
+  int calculateResult() {
     double sum = 0;
     for (var e in state.questions!) {
       sum += ((state.selectedOptions![e.id]! - 1) / 5);
     }
-
-    log(((sum / state.questions!.length) * 100).toString());
+    return ((sum / state.questions!.length) * 100).round();
   }
 }
 
 final questionsController =
-    StateNotifierProvider<QuestionsController, QuestionsState>((ref) {
+    StateNotifierProvider.autoDispose<QuestionsController, QuestionsState>(
+        (ref) {
   return QuestionsController(repository: ref.watch(checkUpRepositoryProvider));
 });
