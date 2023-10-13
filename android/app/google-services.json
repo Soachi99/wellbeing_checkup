@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "687661812126",
+    "project_id": "wellbeingcheckup",
+    "storage_bucket": "wellbeingcheckup.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:687661812126:android:cb97a83d618a3fac51ee8f",
+        "android_client_info": {
+          "package_name": "com.example.wellbeing_checkup"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjI2-j4hPvjVkDu9Y5lnsrcAZG9EZtX-A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

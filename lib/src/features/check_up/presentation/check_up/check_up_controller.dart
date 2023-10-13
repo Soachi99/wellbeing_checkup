@@ -23,8 +23,22 @@ class CheckUpController extends StateNotifier<CheckUpState> {
     }
 
     state = state.copyWith(
-        options: state.options, enableButton: selectedOptions.isNotEmpty);
+        options: state.options,
+        enableButton: selectedOptions.isNotEmpty,
+        loadingButton: state.loadingButton);
     log(selectedOptions.toString());
+  }
+
+  onContinue() async {
+    state = state.copyWith(
+        options: state.options,
+        enableButton: state.enableButton,
+        loadingButton: true);
+    await repository.getQuestions(selectedOptions[0]);
+    state = state.copyWith(
+        options: state.options,
+        enableButton: state.enableButton,
+        loadingButton: false);
   }
 }
 

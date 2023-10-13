@@ -1,8 +1,9 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:wellbeing_checkup/src/tools/tools.dart';
 import 'package:wellbeing_checkup/src/widgets/custom_button.dart';
-import 'package:wellbeing_checkup/src/widgets/custom_checkbox/custom_checkbox/custom_checkbox.dart';
+import 'package:wellbeing_checkup/src/widgets/custom_checkbox/custom_checkbox.dart';
 import 'package:wellbeing_checkup/src/widgets/custom_text.dart';
 
 import 'check_up_controller.dart';
@@ -30,7 +31,7 @@ class _CheckUpState extends ConsumerState<CheckUpPage> {
       backgroundColor: customColors.white,
       body: SafeArea(
           child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
@@ -71,11 +72,17 @@ class _CheckUpState extends ConsumerState<CheckUpPage> {
             const Spacer(),
             CustomButton(
                 label: "Continue",
+                isLoading: state.loadingButton,
                 disabled: !state.enableButton,
-                onPressed: () {})
+                onPressed: () async => await onContinue(controller))
           ],
         ),
       )),
     );
+  }
+
+  onContinue(CheckUpController controller) async {
+    await controller.onContinue();
+    context.go(Routes.questions);
   }
 }

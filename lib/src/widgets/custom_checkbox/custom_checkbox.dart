@@ -1,10 +1,10 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:wellbeing_checkup/src/widgets/custom_checkbox/custom_checkbox/custom_checkbox_state.dart';
+import 'package:wellbeing_checkup/src/tools/tools.dart';
+import 'package:wellbeing_checkup/src/widgets/custom_checkbox/custom_checkbox_state.dart';
 import 'package:wellbeing_checkup/src/widgets/custom_text.dart';
 
-import '../../../tools/tools.dart';
 import 'custom_checkbox_controller.dart';
 
 typedef Callback = void Function(String optionId);
