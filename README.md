@@ -1,6 +1,6 @@
 # Wellbeing Checkup app
 
-Proyecto que da solución a la prueba técnica para la empresa Vinnove.
+Proyecto de cuestionarios dinamicos para medir la salud de una persona 
 
 ## Para empezar
 
